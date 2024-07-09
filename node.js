@@ -10,7 +10,7 @@ const student = {
 
   // here this won't work
   greet1: () => {
-    console.log("Hello , I'm " + this.name);
+    // console.log("Hello , I'm not " + this.name);
   },
   
   // this will work
@@ -25,5 +25,3 @@ const student = {
 student.greet()
 student.greet12();
 
-const array = ['apple', 'oranges', ' ', 'mango', ' ', 'lemon']
-console.log(array.map(fruit => fruit ==' '?'empty string':fruit))

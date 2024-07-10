@@ -19,7 +19,7 @@ const student = {
   },
   greet12: function () {
     console.log("Hi , I'm " + this.age + "years old");
-  },
+  }
 };
 
 student.greet()

@@ -104,7 +104,7 @@ const requestHandler = (req, res) => {
     return req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       debugger;
-      const message = parsedBody.split("=")[1];
+      const message = parsedBody.split("=")[0];
       console.log(parsedBody);
 
       // Add error handling

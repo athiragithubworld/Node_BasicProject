@@ -6,21 +6,19 @@ const bodyParser = require('body-parser');
 
 const app = express()
 
+const adminRoutes = require("./routes/admin")
+
+const shopRoutes = require("./routes/shop")
+
 app.use(bodyParser.urlencoded({extended: false}))
 
-app.use("/add-product",(req, res, next) => {
-  console.log("First Middleware")
-  res.send(
-    '<form action="/product" method="POST"><input type="text" name="title"><input type="number" name="size"><button type="submit" >Add Product</button></form>'
-  );
-  // next()
+app.use('/admin',adminRoutes);
+app.use("/shop",shopRoutes);
+
+app.use((req, res, next) => {
+  res.status(404).send('<h1>Page Not Found </h1>')
 })
 
-app.use("/product", (req, res, next) => {
-  
-  console.log(req.body)
-  res.redirect('/')
-})
 // const routes = require("./routers")
 // const server = http.createServer(routes.handler)
 
